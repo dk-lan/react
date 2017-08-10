@@ -6,8 +6,8 @@ React 是 facebook 开源的一套框架，可总结为以下几个特点：
 - DATA FLOW： React是单向响应的数据流。
 
 # 技术点
-- JSX 语法
-- 组件
+- [JSX 语法](https://github.com/dk-lan/react/tree/master/jsx)
+- [组件](https://github.com/dk-lan/react/tree/master/component)
 - 生命周期
 - 路由
 - webpack + es6 环境搭建

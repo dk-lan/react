@@ -48,7 +48,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 ReactDOM.render(<Component1 />, document.getElementById('div1'));
 ```
-[效果预览](https://dk-lan.github.io/react/component/src/define/define.html)
+[效果预览]https://dk-lan.github.io/react/component/src/define/define.html)
 
 ## 属性(props)
 因为组件的调用是 html 标签的形式，而 html 标签是可以添加属性，所以在 React 的组件当中也是可以添加自定义的属性，而属性的获取则用 `this.props`
@@ -182,6 +182,7 @@ ReactDOM.render(<Component1 subjects={_subjects}/>, document.getElementById('div
 1. 如果当前组件没有子节点，它就是 undefined
 2. 如果有一个子节点，数据类型是 object
 3. 如果有多个子节点，数据类型就是 array
+
 为了解决这种数据类型不一致导致在使用的过程中要不断判断的情况，React 提供了一个方法`Reacth.Children`来处理该属性。
 ```javascript
 var Component1 = React.createClass({
