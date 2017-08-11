@@ -1,6 +1,6 @@
-import http from './HttpClient';
+import http from '../utils/HttpClient';
 
-export function ajaxMiddleware({dispatch, getState}){
+export function ajaxMiddleware({ dispatch, getState }) {
     
     return next => action => {
         const {
@@ -43,7 +43,7 @@ export function ajaxMiddleware({dispatch, getState}){
             .then(
                 response => dispatch(Object.assign({}, { query }, { payload }, {
                     type: successType,
-                    response: response,
+                    body: response,
                     lastFetched: Date.now()
                 })),
                 error => dispatch(Object.assign({}, { query }, { payload }, {                    
@@ -51,33 +51,5 @@ export function ajaxMiddleware({dispatch, getState}){
                     error
                 }))
             );
-    };    
+    };
 }
-
-
-// var action = {
-//     changeRed: function(){
-//         return {type: 'red'}
-//     }
-// }
-
-// var reducer = function(state = {}, action){
-//     return state;
-// }
-
-// var reudx = {
-//     dispatch: function(_action){
-//         for(var key in _action){
-//             var _actionReseult = _action[key]();
-//             if(_actionReseult.url){
-//                 $.get(_actionReseult.url, _actionReseult.data, function(){
-//                     reducer(undefined, _action[key]())
-//                 })
-//             } else {
-//                 reducer(undefined, _action[key]())
-//             }
-//         }
-//     }
-// }
-
-// redux.dispatch(action);

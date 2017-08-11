@@ -9,6 +9,7 @@ export default function(state = {}, action){
 
     // return state;
 
-    state.dataset = action.response.data.data;
+    // state.dataset = action.response.data.data;
+    console.log(state, action);
     return state;
 }

@@ -1,9 +1,8 @@
-import common from '../../libs/common/common';
-
-export default function login(_username, _password){
+export function login(username, password){
     return {
-        type: '',
-        url: common.baseUrl + 'login',
-        data: {username: _username, _password}
+        types: ['a', 'b', 'c'],
+        path: 'login',
+        method: 'post',
+        query: {username, password}
     }
 }

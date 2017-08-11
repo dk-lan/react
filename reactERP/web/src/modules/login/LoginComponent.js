@@ -1,32 +1,37 @@
 import React, {Component} from 'react';
-import LoginAction from './LoginAction';
+import loginActions from './LoginAction';
+import {connect} from 'react-redux'
 // import {Input} from 'element-react';
 // import 'element-theme-default';
 
 class LoginComponent extends Component{
     render(){
         return (
-        <div class="col-md-12">
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
+        <div className="col-md-12">
+            <div className="form-group">
+                <label className="col-sm-2 control-label">
                     用户名
                 </label>
-                <div class="col-sm-9">
-                    <input type="text" placeholder="输入用户名" id="form-field-1" class="form-control"/>
+                <div className="col-sm-9">
+                    <input type="text" placeholder="输入用户名" id="form-field-1" className="form-control"/>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="form-field-1">
+            <div className="form-group">
+                <label className="col-sm-2 control-label">
                     密码
                 </label>
-                <div class="col-sm-9">
-                    <input type="text" placeholder="输入密码" id="form-field-1" class="form-control"/>
+                <div className="col-sm-9">
+                    <input type="text" placeholder="输入密码" id="form-field-1" className="form-control"/>
                 </div>
             </div> 
-            <button type="button" class="btn btn-primary">登录</button>                       
+            <button type="button" className="btn btn-primary">登录</button>
+            <i className="fa fa-fire"></i>
         </div>            
         )
     }
 }
 
-export default LoginComponent;
+const mapStateToProps = state => ({
+    loading: false,
+})
+export default connect(mapStateToProps, loginActions)(LoginComponent)
