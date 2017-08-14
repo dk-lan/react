@@ -48,7 +48,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 ReactDOM.render(<Component1 />, document.getElementById('div1'));
 ```
-[效果预览]https://dk-lan.github.io/react/component/src/define/define.html)
+[效果预览](https://dk-lan.github.io/react/component/src/define/define.html)
 
 ## 属性(props)
 因为组件的调用是 html 标签的形式，而 html 标签是可以添加属性，所以在 React 的组件当中也是可以添加自定义的属性，而属性的获取则用 `this.props`
@@ -207,10 +207,51 @@ ReactDOM.render(
 ```
 [效果预览](https://dk-lan.github.io/react/component/src/props/props.html)
 
-### 组件通信
-
 ## state
+state 可以理解成 props，不一样的在于 props 是只读的，而 state 是可读写。当 state 发生改变的时候会重新执行 render 方法去渲染整颗 DOM 树，在渲染的过程中会有 diff 算法去计算哪些 DOM 有更新，从而提升性能。
+在使用 state　前要先初始化 `getInitialState`
+更改 state 一定要用 `setState`
+```javascript
+//es5
+var StateComponent = React.createClass({
+    getInitialState: function(){
+        return {
+            text: ''
+        }
+    },
+    change: function(event){
+        this.setState({text: event.target.value});
+    },
+    render: function(){
+        return (
+            <div>
+                <p><input type="text" onChange={this.change}/></p>
+                <p>{this.state.text}</p>
+            </div>
+        )
+    }
+}) 
+
+//es6
+import React from 'react';
+import ReactDOM from 'react-dom';
+class Component1 extends React.createClass{
+    state = {
+        text: ''
+    }
+    change(event){
+        this.setState({text: event.target.value});
+    },
+    render(){
+        return (
+            <div>
+                <p><input type="text" onChange={this.change}/></p>
+                <p>{this.state.text}</p>
+            </div>
+        )
+    }
+}
+```
+
 
 ## 事件
-
-## 生命周期
