@@ -207,6 +207,25 @@ ReactDOM.render(
 ```
 [效果预览](https://dk-lan.github.io/react/component/src/props/props.html)
 
+## 事件和 ref
+事件可以直接写到 DOM 节点，然后通过 ref 来获取 DOM 节点
+```javascript
+var Component1 = React.createClass({
+    focusHandler: function(){
+        this.refs.name.focus();
+    },
+    render: function(){
+        return (
+            <div>
+                <input type="text" name="name" placeholder="" ref="name"/>
+                <input type="button" name="" value="focus" onClick={this.focusHandler} />
+            </div>
+        );
+    }
+});
+ReactDOM.render(<Component1/>, document.getElementById('div1'));
+```
+
 ## state
 state 可以理解成 props，不一样的在于 props 是只读的，而 state 是可读写。当 state 发生改变的时候会重新执行 render 方法去渲染整颗 DOM 树，在渲染的过程中会有 diff 算法去计算哪些 DOM 有更新，从而提升性能。
 在使用 state　前要先初始化 `getInitialState`
@@ -252,6 +271,5 @@ class Component1 extends React.createClass{
     }
 }
 ```
+[效果预览](https://dk-lan.github.io/react/component/src/state/state.html)
 
-
-## 事件

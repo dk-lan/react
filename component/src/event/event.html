@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>React-Component-state</title>
+        <title>React-Component-event</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--React 核心库-->
@@ -16,26 +16,20 @@
         <div id="div1"></div>                     
 
         <script type="text/babel">
-            //state
-            var StateComponent = React.createClass({
-                getInitialState: function(){
-                    return {
-                        text: ''
-                    }
-                },
-                change: function(event){
-                    this.setState({text: event.target.value});
+            var Component1 = React.createClass({
+                focusHandler: function(){
+                    this.refs.name.focus();
                 },
                 render: function(){
                     return (
                         <div>
-                            <p><input type="text" onChange={this.change}/></p>
-                            <p>{this.state.text}</p>
+                            <input type="text" name="name" placeholder="" ref="name"/>
+                            <input type="button" name="" value="focus" onClick={this.focusHandler} />
                         </div>
-                    )
+                    );
                 }
-            }) 
-            ReactDOM.render(<StateComponent/>, document.getElementById('div1'));
+            });
+            ReactDOM.render(<Component1/>, document.getElementById('div1'));
         </script>
     </body>
 </html>
