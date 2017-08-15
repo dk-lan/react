@@ -225,6 +225,7 @@ var Component1 = React.createClass({
 });
 ReactDOM.render(<Component1/>, document.getElementById('div1'));
 ```
+[效果预览](https://dk-lan.github.io/react/component/src/event/event.html)
 
 ## state
 state 可以理解成 props，不一样的在于 props 是只读的，而 state 是可读写。当 state 发生改变的时候会重新执行 render 方法去渲染整颗 DOM 树，在渲染的过程中会有 diff 算法去计算哪些 DOM 有更新，从而提升性能。
@@ -272,4 +273,3 @@ class Component1 extends React.createClass{
 }
 ```
 [效果预览](https://dk-lan.github.io/react/component/src/state/state.html)
-
