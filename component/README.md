@@ -71,6 +71,7 @@ ReactDOM.render(<Component1 name="Tom" age="18"/>, document.getElementById('div1
 ```
 ### 默认属性(DefaultProps)
 组件的属性除了可以通过调用的时候以 DOM 节点属性的方式传值，也可以设置默认的属性值，如果调用的时候没有传对应的属性值，则会用默认的属性值。
+`getDefalutProps` 这个方法只会被调用一次。
 ```javascript
 //es5
 var React = require('react');
@@ -231,6 +232,7 @@ ReactDOM.render(<Component1/>, document.getElementById('div1'));
 state 可以理解成 props，不一样的在于 props 是只读的，而 state 是可读写。当 state 发生改变的时候会重新执行 render 方法去渲染整颗 DOM 树，在渲染的过程中会有 diff 算法去计算哪些 DOM 有更新，从而提升性能。
 在使用 state　前要先初始化 `getInitialState`
 更改 state 一定要用 `setState`
+`getInitialState` 该方法在每次 render 时都会被调用一次。
 ```javascript
 //es5
 var StateComponent = React.createClass({

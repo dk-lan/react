@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-import loginActions from './LoginAction';
+import * as loginActions from './LoginAction';
 import {connect} from 'react-redux'
 // import {Input} from 'element-react';
 // import 'element-theme-default';
 
 class LoginComponent extends Component{
+    loginHandler(){
+        this.props.login();
+    }
     render(){
         return (
         <div className="col-md-12">
@@ -24,14 +27,23 @@ class LoginComponent extends Component{
                     <input type="text" placeholder="输入密码" id="form-field-1" className="form-control"/>
                 </div>
             </div> 
-            <button type="button" className="btn btn-primary">登录</button>
+            <button type="button" className="btn btn-primary" onClick={this.loginHandler.bind(this)}>登录</button>
             <i className="fa fa-fire"></i>
+            <h1>{this.props.a}</h1>
         </div>            
         )
     }
 }
 
-const mapStateToProps = state => ({
-    loading: false,
-})
+// const mapStateToProps = state => ({
+//     loading: false,
+// })
+
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        loading: false,
+        a: state.login.login.a
+    }
+}
 export default connect(mapStateToProps, loginActions)(LoginComponent)

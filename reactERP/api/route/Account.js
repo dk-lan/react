@@ -21,14 +21,17 @@ module.exports = {
             response.send({state: true});
         })
 
-        app.post("/register", function(request, response){})
+        app.post("/register", function(request, response){
+            console.log(request.body);
+            response.send('ok');
+        })
 
-        app.get('/setSession', function(request, response){
+        app.post('/setSession', function(request, response){
             request.session.username = 'dk';
             response.send(request.session.username)
         })
 
-        app.get('/getSession', function(request, response){
+        app.post('/getSession', function(request, response){
             response.send(request.session.username);
         })
 

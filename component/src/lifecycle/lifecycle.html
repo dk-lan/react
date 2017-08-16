@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>React-Component-生命周期</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--React 核心库-->
+        <script src="../../../js/react.js"></script>
+        <!--React 跟 Dom 相关的功能库-->
+        <script src="../../../js/react-dom.js"></script>
+        <!--jsx 转换 js 的框架 babel-->
+        <script src="../../../js/browser.min.js"></script>
+    </head>
+    <body>
+        <fieldset>
+            <legend><h3>componentWillMount</h3></legend>
+            <div id="div1"></div>
+        </fieldset>
+
+        <script type="text/babel">
+            var Button = React.createClass({
+                getInitialState: function() {
+                    return {
+                    data:0
+                    };
+                },
+                setNewNumber: function() {
+                    //reset state
+                    //当 state 发生改变的时候，state 对应的组件会重新挂载
+                    //将 state 绑定到对应的组件
+                    this.setState({data: this.state.data + 1})
+                },
+                render: function () {
+                        var content;
+                        if(this.state.data % 2 == 0){
+                            content = <Content myNumber = {this.state.data}></Content>;
+                        } else {
+                            content = <h3>{this.state.data}</h3>;
+                        }
+                        return (
+                            <div>
+                                <button onClick = {this.setNewNumber}>INCREMENT</button>
+                                {content}
+                            </div>
+                        );
+                    }
+            })
+
+
+            var Content = React.createClass({
+                getInitialState: function(){
+                    console.log('state');
+                    return {
+                    };
+                },
+                getDefaultProps: function(){
+                    console.log('props');
+                    return {};
+                },
+                componentWillMount:function() {
+                    console.log('Component WILL MOUNT!')
+                },
+                componentDidMount:function() {
+                    console.log('Component DID MOUNT!')
+                },
+                componentWillReceiveProps:function(newProps) {
+                    console.log('Component WILL RECEIVE PROPS!')
+                },
+                shouldComponentUpdate:function(newProps, newState) {
+                    return true;
+                },
+                componentWillUpdate:function(nextProps, nextState) {
+                    console.log('准备更新组件');
+                },
+                componentDidUpdate:function(prevProps, prevState) {
+                    console.log('组件已经更新')
+                },
+                componentWillUnmount:function() {
+                    console.log('Component WILL UNMOUNT!')
+                },
+                render: function () {
+                    console.log('render');
+                    return (
+                        <h3>{this.props.myNumber}</h3>
+                    );
+                }
+            });
+        
+            ReactDOM.render(<Button />, document.getElementById('div1'));		
+        </script>
+    </body>
+</html>

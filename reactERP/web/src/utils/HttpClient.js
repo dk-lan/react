@@ -5,7 +5,7 @@ import request from 'superagent'
 
 // import jsonp from 'superagent-jsonp';
 
-const LOCAL_SERVER = 'http://localhost:81/cloudapi/';
+const LOCAL_SERVER = 'http://localhost:888/';
 
 const DEV_SERVER = '';
 const PRO_SERVER = 'http://www.dk-lan.com/cloudapi/';
@@ -14,7 +14,7 @@ function getUrl(path) {
     if (path.startsWith('http')) {
         return path;
     }
-    return `${PRO_SERVER}${path}`;
+    return `${LOCAL_SERVER}${path}`;
 }
 
 const errorHandler = (err) => {
