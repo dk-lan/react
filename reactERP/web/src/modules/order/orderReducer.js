@@ -21,5 +21,4 @@ const orderReducers = combineReducers({
     print
 });
 
-
 export default orderReducers;
