@@ -9,7 +9,7 @@ React 是 facebook 开源的一套框架，可总结为以下几个特点：
 - [JSX 语法](https://github.com/dk-lan/react/tree/master/jsx)
 - [组件](https://github.com/dk-lan/react/tree/master/component)
 - [组件通信](https://github.com/dk-lan/react/tree/master/component/src/communication)
-- 生命周期
+- [生命周期](https://github.com/dk-lan/react/tree/master/component/src/lifecycle)
 - 路由
 - webpack + es6 环境搭建
 - Flux
