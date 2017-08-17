@@ -1,4 +1,3 @@
-//https://segmentfault.com/a/1190000004168886
 # 生命周期
 React 是一个由虚拟 DOM 渲染成真实 DOM 的过程，这个过程称为组件的生命周期。React 把这个周期划分为三个阶段，每个阶段都提供了 will 和 did 两种处理方式，will 是指发生前，did 是指发生后。
 - Mounting：已插入真实 DOM
