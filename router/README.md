@@ -175,7 +175,7 @@ ReactDOM.render(
 * `**`
 	* 匹配任意字符，直到下一个/、?、#为止。匹配方式是贪婪模式。
 	* `<Route path="/**/*.jpg">`
-	* * `this.props.params` 获取的参数为一个固定的对象： `{splat: [**, *]}`。
+	* `this.props.params` 获取的参数为一个固定的对象： `{splat: [**, *]}`。
 	* 匹配 URL：/all3/a/001.jpg，参数为 `{splat: ['a', '001']}`。
 	* 匹配 URL：/all3/a/b/001.jpg，参数为 `{splat: ['a/b', '001']}`。
 [效果预览](https://dk-lan.github.io/react/router/params.html)
