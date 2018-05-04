@@ -8,7 +8,6 @@ function scanCode(state = [], action){
         const newState = update(state, {$push: [action.body]});
         return newState;
     }
-    console.log(state);
     return state;
 }
 

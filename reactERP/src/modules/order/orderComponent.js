@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import * as orderActions from './orderAction';
+import PropTypes from 'prop-types'
 
 
 class OrderComponent extends React.Component{
@@ -25,11 +26,13 @@ class OrderComponent extends React.Component{
     }
 }
 
+OrderComponent.propTypes = {
+    name: PropTypes.string.isRequired
+}
 
 // const mapStateToProps = state => ({order: state.order})
 // state == store
 const mapStateToProps = (store) => {
-    console.log(store);
     return {
         order: store.order
     }

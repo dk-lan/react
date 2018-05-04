@@ -4,6 +4,6 @@ import {ajaxMiddleware} from '../utils/ajaxMiddleware';
 
 import rootReducer from './rootReducer';
 
-const store = createStore(rootReducer, {}, applyMiddleware(thunkMiddleware, ajaxMiddleware))
+const store = createStore(rootReducer)
 
 export default store;

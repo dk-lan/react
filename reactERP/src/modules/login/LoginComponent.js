@@ -40,7 +40,6 @@ class LoginComponent extends Component{
 // })
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         loading: false,
         a: state.login.login.a
