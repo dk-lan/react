@@ -119,3 +119,18 @@ class Component1 extends React.Component{
 
 ## input file 元素
 因为`<input type="file">`是特殊的元素，它是只读的，所以在 React 中需要用`ref`来进行特殊处理
+```javascript
+class Component1 extends React.Component{
+    submit = (e) => {
+        console.log(this.file.files)
+    }
+    render(){
+        return (
+            <div>
+                <input type='file' ref={input => {this.file = input}}/>
+                <input type="button" value="submit" onClick={this.submit} />
+            </div>
+        )        
+    }
+}
+```
