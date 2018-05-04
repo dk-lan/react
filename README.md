@@ -11,10 +11,11 @@ React 是 facebook 开源的一套框架，可总结为以下几个特点：
 - [组件渲染](https://github.com/dk-lan/react/tree/master/component/src/render)
 - [组件事件](https://github.com/dk-lan/react/tree/master/component/src/event)
 - [state](https://github.com/dk-lan/react/tree/master/component/src/state)
+- [样式绑定](https://github.com/dk-lan/react/tree/master/component/src/style)
+- [表单](https://github.com/dk-lan/react/tree/master/component/src/form)
 - [组件通信](https://github.com/dk-lan/react/tree/master/component/src/communication)
 - [生命周期](https://github.com/dk-lan/react/tree/master/component/src/lifecycle)
 - [路由（3.0）](https://github.com/dk-lan/react/tree/master/router)
-- webpack + es6 环境搭建
 - Flux
 - Redux
 - 项目应用

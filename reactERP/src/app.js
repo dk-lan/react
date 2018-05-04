@@ -16,13 +16,18 @@ import ReactDOM from 'react-dom';
 //     document.getElementById('app')
 // );
 
+let c1 = {
+    color: 'red',
+    width: '100%',
+    height: '300px',
+    border: 'solid 1px red'
+}
 class Component1 extends React.Component{
-    submit(n, e){
-        console.log(n)
-        e.target.style.color = 'red'
-    }
     render(){
-        return <input type="button" value="submit" onClick={this.submit.bind(this, 20)}/>
+        console.log(c1)
+        return (
+            <div style={c1}></div>
+        )        
     }
 }
 ReactDOM.render(
