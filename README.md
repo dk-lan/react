@@ -18,7 +18,7 @@ React 是 facebook 开源的一套框架，可总结为以下几个特点：
 - [路由（3.0）](https://github.com/dk-lan/react/tree/master/router)
 - Redux
     - [Redux 简介和简单实现](https://github.com/dk-lan/react/tree/master/redux)
-    - [Redux 跨组件通信之入门篇 —— combineReducers](https://github.com/dk-lan/react/tree/master/combineReducers)
-    - [Redux 跨组件通信之进阶篇 —— Provider 和 connect](https://github.com/dk-lan/react/tree/master/connectProvider)
-    - [Redux 跨组件通信之高级篇 —— 中间件](https://github.com/dk-lan/react/tree/master/redux/middelware)
+    - [Redux 跨组件通信之入门篇 —— combineReducers](https://github.com/dk-lan/react/tree/master/redux/combineReducers)
+    - [Redux 跨组件通信之进阶篇 —— Provider 和 connect](https://github.com/dk-lan/react/tree/master/redux/connetProvider)
+    - [Redux 跨组件通信之高级篇 —— 中间件](https://github.com/dk-lan/react/tree/master/redux/middleware)
 - 项目应用
