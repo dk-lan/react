@@ -1,16 +1,15 @@
 ## Redux 跨组件通信之入门篇 —— combineReducers
 ### 结构
-.
-+-- component1
-|   +-- actions.js
-|   +-- reducer.js
-|   +-- component1.js
-+-- component2
-|   +-- actions.js
-|   +-- reducer.js
-|   +-- component.js
-+-- redux
-|   +- store.js
+- component1
+    - actions.js
+    - reducer.js
+    - component1.js
+- component2
+    - actions.js
+    - reducer.js
+    - component.js
+- redux
+- tore.js
 
 ### 组件 Component1
 #### action.js

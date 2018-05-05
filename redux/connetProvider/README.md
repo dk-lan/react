@@ -1,17 +1,16 @@
 ## Redux 跨组件通信之进阶篇 —— Provider 和 connect
 ### 结构
-.
-+-- component1
-|   +-- actions.js
-|   +-- reducer.js
-|   +-- component1.js
-+-- component2
-|   +-- actions.js
-|   +-- reducer.js
-|   +-- component.js
-+-- redux
-|   +- store.js
-+-- app.js
+- component1
+    - actions.js
+    - reducer.js
+    - component1.js
+- component2
+    - actions.js
+    - reducer.js
+    - component.js
+- redux
+- tore.js
+- app.js
 
 ### 组件 Component1
 #### action.js
