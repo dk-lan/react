@@ -110,7 +110,7 @@ ReactDOM.render(
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Component1 = React.createClass({
-    getDefalutProps: function(){
+    getDefaultProps: function(){
         return {
             name: 'Tom',
             age: 20
@@ -130,7 +130,7 @@ var Component1 = React.createClass({
 import React from 'react';
 import ReactDOM from 'react-dom';
 class Component1 extends React.createClass{
-    static defalutProps = {
+    static defaultProps = {
         name: 'Tom',
         age: 20
     }
