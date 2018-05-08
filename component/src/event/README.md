@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Component1 extends React.Component{
-    focusHandler: function(){
+    focusHandler(){
         this.refs.name.focus();
     }
     render(){
@@ -23,7 +23,7 @@ ReactDOM.render(<Component1/>, document.getElementById('div1'));
 [效果预览](https://dk-lan.github.io/react/component/src/event/event.html)
 
 ## 事件对象 —— event
-React 在事件方法调用上默认会传一个形参`evetns`，该对象是一个合成事件，所以不需要担心浏览器兼容的问题。
+React 在事件方法调用上默认会传一个形参`events`，该对象是一个合成事件，所以不需要担心浏览器兼容的问题。
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
