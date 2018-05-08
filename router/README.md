@@ -180,3 +180,140 @@ ReactDOM.render(
     * 匹配 URL：/all3/a/b/001.jpg，参数为 `{splat: ['a/b', '001']}`。
 [效果预览](https://dk-lan.github.io/react/router/params.html)
 
+# IndexRoute
+当访问一个嵌套路由时，指定默认显示的组件
+#### AppComponent.js
+```javascript
+import React from 'react'
+
+export default class AppComponent extends React.Component{
+    render(){
+        return <div>{this.props.children}</div>
+    }
+}
+```
+
+#### LoginComponent.js
+```javascript
+import React, {Component} from 'react'
+
+export default class LoginComponent extends Component{
+    login(){}
+    render(){
+        return <h1>Login</h1>
+    }
+}
+```
+
+#### HomeComponent.js
+```javascript
+import React, {Component} from 'react'
+
+export default class HomeComponent extends Component{
+    login(){}
+    render(){
+        return <h1>Home</h1>
+    }
+}
+```
+
+#### Router.js
+```javascript
+import React from 'react'
+import {Route, IndexRoute} from 'react-router'
+
+import AppComponent from '../components/app/app'
+import HomeComponent from '../components/home/home'
+import LoginComponent from '../components/login/login'
+
+const routes = (
+    <Route path="/" component={AppComponent}>
+        <IndexRoute component={HomeComponent} />
+        <Route path="login" component={LoginComponent} />
+        <Route path="home" component={HomeComponent} />
+    </Route>
+)
+
+export default routes;
+```
+
+- 如果没有加`IndexRoute`，则在访问 `http://localhost/#/` 时页面是空白的
+- 访问 `http://localhost/#/login` 才会显示内容
+- 加上 `IndexRoute`，在访问`http://localhost/#/`时会默认渲染`HomeComponent`
+
+# 模块化
+可利用组件`Router`的属性`routes`来实现组件模块化
+#### router.js
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import {Route, Router, IndexRoute, hashHistory} from 'react-router'
+
+import AppComponent from '../components/app/app'
+import HomeComponent from '../components/home/home'
+import LoginComponent from '../components/login/login'
+
+const routes = (
+    <Route path="/" component={AppComponent}>
+        <IndexRoute component={HomeComponent} />
+        <Route path="login" component={LoginComponent} />
+        <Route path="home" component={HomeComponent} />
+    </Route>
+)
+
+ReactDOM.render(
+    <Router history={hashHistory} routes={routes} />,
+    document.getElementById('app')
+)
+```
+# 编程式导航
+- 普通跳转 `this.props.router.push('/home/cnode')`
+- 带参数跳转`this.props.router.push({pathname: '/home/cnode', query: {name: 'tom'}})`
+
+# 跌幅钩子函数
+每个路由都有`enter`和`leave`两个钩子函数，分别代表用户进入时和离开时触发。
+### onEnter
+进入路由`/home`前会先触发`onEnter`方法，如果已登录，则直接`next()`正常进入目标路由，否则就先修改目标路径`replace({ pathname: 'login' })`，再`next()`跳转。
+```javascript
+let isLogin = (nextState, replace, next) => {
+    if(window.localStorage.getItem('auth') == 'admin'){
+        next()
+    } else {
+        replace({ pathname: 'login' })
+        next();
+    }
+    
+}
+const routes = (
+    <Route path="/" component={AppComponent}>
+        <Route path="login" component={LoginComponent} />
+        <Route path="home" component={HomeComponent} onEnter={isLogin}/>
+    </Route>
+)
+```
+### onLeave
+对应的`setRouteLeaveHook`方法，如果`return true`则正常离开，否则则还是停留在原路由
+```javascript
+import React from 'react'
+import {Link} from 'react-router'
+
+export default class Component1 extends React.Component{
+    componentDidMount(){
+        this.props.router.setRouteLeaveHook(
+            this.props.route,
+            this.routerWillLeave
+        )
+    }
+    routerWillLeave(){
+        return '确认要离开？'
+    }
+    render(){
+        return (
+            <div>
+                <Link to="/login">Login</Ling>
+            </div>
+        )
+    }
+}
+```

@@ -1,29 +1,31 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router'
+import './header.scss'
 
-class HeaderComponent extends Comment{
+class HeaderComponent extends Component{
     render(){
         return (
-            <div class="dk-header">
+            <div className="dk-header">
                 <ul>
-                    <li><router-link to="/">PrintERP</router-link></li>
+                    <li><Link to="/">PrintERP</Link></li>
                 </ul>
                 <ul>
                     <li>
-                        <router-link class="dropdown-toggle count-info" to="/">
-                            <i class="fa fa-bars"></i>
-                            <span class="badge badge-primary"> 2</span>
-                        </router-link>
+                        <Link className="dropdown-toggle count-info" to="/">
+                            <i className="fa fa-bars"></i>
+                            <span className="badge badge-primary"> 2</span>
+                        </Link>
                     </li>
                     <li>
-                        <router-link class="dropdown-toggle count-info" to="/">
-                            <i class="fa fa-envelope"></i>
-                            <span class="badge badge-primary"> 2</span>
-                        </router-link>
+                        <Link className="dropdown-toggle count-info" to="/">
+                            <i className="fa fa-envelope"></i>
+                            <span className="badge badge-primary"> 2</span>
+                        </Link>
                     </li>
                     <li>
-                        <router-link class="dropdown-toggle count-info" to="/">
+                        <Link className="dropdown-toggle count-info" to="/">
                             Adminstrator
-                        </router-link>
+                        </Link>
                     </li>						
                 </ul>		
             </div>        

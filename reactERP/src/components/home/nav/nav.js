@@ -1,39 +1,43 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router'
+import './nav.scss'
 
-class NavComponent extends Comment{
+export default class NavComponent extends Component{
+    toggleNav(){}
+    toggleNavItem(){}
     render(){
         return (
-            <div class="['dk-nav-content', navOpen ? '' : 'toggle']" ref="dknav">
-            <ul class="dk-nav">
-                <li class="dk-nav-item nav-toggle">
-                    <a class="btn btn-primary" href="javascript:" click="toggleNav" >
-                        <i class="fa fa-bars"></i> 
+            <div className="dk-nav-content" ref="dknav">
+            <ul className="dk-nav">
+                <li className="dk-nav-item nav-toggle">
+                    <a className="btn btn-primary" href="javascript:" onClick={this.toggleNav} >
+                        <i className="fa fa-bars"></i> 
                     </a>
                 </li>
-                <li class="dk-nav-item" click="toggleNavItem">
+                <li className="dk-nav-item" onClick={this.toggleNavItem}>
                     <a href="javascript:">
-                        <i class="fa fa-file-o"></i>
+                        <i className="fa fa-file-o"></i>
                         <span>档案管理</span>
-                        <i class="fa fa-angle-left"></i>
+                        <i className="fa fa-angle-left"></i>
                     </a>
-                    <ul class="dk-sub-nav">
-                        <li><router-link to="/clients">客户档案</router-link></li>
-                        <li><router-link to="/">产品档案</router-link></li>
-                        <li><router-link to="/">供应商档案</router-link></li>
-                        <li><router-link to="/">人事档案</router-link></li>
+                    <ul className="dk-sub-nav">
+                        <li><Link to="/clients">客户档案</Link></li>
+                        <li><Link to="/">产品档案</Link></li>
+                        <li><Link to="/">供应商档案</Link></li>
+                        <li><Link to="/">人事档案</Link></li>
                     </ul>
                 </li>
-                <li class="dk-nav-item" click="toggleNavItem">
+                <li className="dk-nav-item" onClick={this.toggleNavItem}>
                     <a href="javascript:">
-                        <i class="fa fa-cog"></i>
+                        <i className="fa fa-cog"></i>
                         <span>系统设置</span>
-                        <i class="fa fa-angle-left"></i>
+                        <i className="fa fa-angle-left"></i>
                     </a>
-                    <ul class="dk-sub-nav">
-                        <li><router-link to="/">修改密码</router-link></li>
-                        <li><router-link to="/">修改信息</router-link></li>
-                        <li><router-link to="/">权限设置</router-link></li>
-                        <li><router-link to="/">模块设置</router-link></li>
+                    <ul className="dk-sub-nav">
+                        <li><Link to="/">修改密码</Link></li>
+                        <li><Link to="/">修改信息</Link></li>
+                        <li><Link to="/">权限设置</Link></li>
+                        <li><Link to="/">模块设置</Link></li>
                     </ul>
                 </li>					
             </ul>
@@ -41,5 +45,3 @@ class NavComponent extends Comment{
         )
     }
 }
-
-export default NavComponent

@@ -1,23 +1,27 @@
 import React, {Component} from 'react'
+import HeaderComponent from './header/header'
+import NavComponent from './nav/nav'
+import './home.scss'
 
-class HomeComponent extends Comment{
+export default class HomeComponent extends Component{
     render(){
         return (
-            <div class="dk-container">
-            <dk-header></dk-header>
-            <div class="dk-body">
-                <dk-nav></dk-nav>
-                <div class="dk-content">
-                    <div class="dk-toolbar" style="background: #fff;">
-                        <a href="javascript:" class="btn btn-primary btn-sm" class="value.class" v-if="toolList" v-for="(value,key) in toolList" click="click(value)"></a>
+            <div className="dk-container">
+            <HeaderComponent/>
+            <div className="dk-body">
+                <NavComponent />
+                <div className="dk-content">
+                    <div className="dk-toolbar" style={{background: '#fff'}}>
+                        <div className="input-group col-sm-3">
+                            <input type="text" className="form-control" placeholder="Title" />
+                            <div className="input-group-addon">...</div>
+                        </div>
                     </div>
-                    <router-view class="dk-viewer"></router-view>
+                    <div className="dk-viewer">{this.props.children}</div>
                 </div>
             </div>
-            <div class="dk-footer">@dk</div>
+            <div className="dk-footer">@dk</div>
         </div>	       
         )
     }
 }
-
-export default HomeComponent

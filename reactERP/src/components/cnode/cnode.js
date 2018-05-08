@@ -9,6 +9,15 @@ export default class CNodeComponent extends React.Component{
             cols: ['title', 'reply_count', 'top', 'create_at', 'last_reply_at']
         }
     }
+    componentDidMount(){
+        this.props.router.setRouteLeaveHook(
+            this.props.route,
+            this.routerWillLeave
+        )
+    }
+    routerWillLeave(){
+        return '确认要离开？'
+    }
     render(){
         return (
             <div>
