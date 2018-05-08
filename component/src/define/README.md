@@ -129,7 +129,7 @@ var Component1 = React.createClass({
 //es6
 import React from 'react';
 import ReactDOM from 'react-dom';
-class Component1 extends React.createClass{
+class Component1 extends React.Component{
     static defaultProps = {
         name: 'Tom',
         age: 20
@@ -161,7 +161,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types'
 
-class Component1 extends React.createClass{
+class Component1 extends React.Component{
     render(){
         return (
             <div>
