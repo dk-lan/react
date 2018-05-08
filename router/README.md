@@ -271,7 +271,7 @@ ReactDOM.render(
 - 普通跳转 `this.props.router.push('/home/cnode')`
 - 带参数跳转`this.props.router.push({pathname: '/home/cnode', query: {name: 'tom'}})`
 
-# 跌幅钩子函数
+# 路由钩子函数
 每个路由都有`enter`和`leave`两个钩子函数，分别代表用户进入时和离开时触发。
 ### onEnter
 进入路由`/home`前会先触发`onEnter`方法，如果已登录，则直接`next()`正常进入目标路由，否则就先修改目标路径`replace({ pathname: 'login' })`，再`next()`跳转。
