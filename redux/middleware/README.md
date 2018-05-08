@@ -24,9 +24,8 @@
 
 ## 实现
 ### 结构
--- app.js
--- src
-    - components
-        - datagrid
-            - datagridcomponent.js
-            - 
+|- app.js  
+|- src  
+|   - components  
+|   - datagrid  
+|       - datagridcomponent.js  
