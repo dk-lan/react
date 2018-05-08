@@ -23,10 +23,10 @@ const errorHandler = (err) => {
 
 const HttpClient = {
     get: (path, query) => new Promise((resolve, reject) => {
-        if(!window.localStorage.getItem('access_token')){
-            router.push({name: 'login'});
-            return false;
-        }
+        // if(!window.localStorage.getItem('access_token')){
+        //     router.push({name: 'login'});
+        //     return false;
+        // }
         var req = request
             .get(getUrl(path))
             .query(query)
@@ -42,10 +42,10 @@ const HttpClient = {
     }),
 
     post: (path, formdata, query) => new Promise((resolve, reject) => {
-        if(path.indexOf('login/index') < 0 && !window.localStorage.getItem('access_token')){
-            router.push({name: 'login'});
-            return false;            
-        }
+        // if(path.indexOf('login/index') < 0 && !window.localStorage.getItem('access_token')){
+        //     router.push({name: 'login'});
+        //     return false;            
+        // }
         request
             .post(getUrl(path))
             .set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')

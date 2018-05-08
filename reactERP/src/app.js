@@ -16,9 +16,10 @@ import store from './redux/configStore'
 
 
 import Component1 from './components/cp1/cp1'
+import CNodeComponent from './components/cnode/cnode'
 ReactDOM.render(
     <Provider store={store}>
-        <Component1/>
+        <CNodeComponent/>
     </Provider>,
     document.getElementById('app')
 )

@@ -179,3 +179,4 @@ ReactDOM.render(
     * 匹配 URL：/all3/a/001.jpg，参数为 `{splat: ['a', '001']}`。
     * 匹配 URL：/all3/a/b/001.jpg，参数为 `{splat: ['a/b', '001']}`。
 [效果预览](https://dk-lan.github.io/react/router/params.html)
+

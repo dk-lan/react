@@ -15,11 +15,18 @@ module.exports = {
             test: /\.css$/,
             exclude: '/node_modules/',
             loader: 'style-loader!css-loader?sourceMap' 
-        },{
+        },      {
             test: /\.scss$/,
             exclude: /node_modules/,
-            use: ['style-loader', 'css-loader', 'sass-loader']
-        },{
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader" // translates CSS into CommonJS
+            }, {
+                loader: "sass-loader" // compiles Sass to CSS
+            }]
+            // loader: ExtractTextPlugin.extract("style", 'css!sass') //这里用了样式分离出来的插件，如果不想分离出来，可以直接这样写 loader:'style!css!sass'
+        }  ,{
 			test: /\.(js|jsx)$/, //一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
 			exclude: '/node_modules/', //屏蔽不需要处理的文件（文件夹）（可选）
 			use: ['babel-loader']

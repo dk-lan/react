@@ -1,17 +1,19 @@
 import React, {Component} from 'react'
+import './spinner.scss'
 
-class SpinnerComponent extends Comment{
+class SpinnerComponent extends React.Component{
     render(){
-        return (
+        let html = (
             <div>
-            <div class="dk-spinner-mask"></div>
-            <div class="dk-spinner dk-spinner-three-bounce">
-                <div class="dk-bounce1"></div>
-                <div class="dk-bounce2"></div>
-                <div class="dk-bounce3"></div>
-            </div>        
-        </div>     
+                <div className="dk-spinner-mask"></div>
+                <div className="dk-spinner dk-spinner-three-bounce">
+                    <div className="dk-bounce1"></div>
+                    <div className="dk-bounce2"></div>
+                    <div className="dk-bounce3"></div>
+                </div>        
+            </div>     
         )
+        return this.props.show ? html : null;
     }
 }
 

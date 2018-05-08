@@ -1,9 +1,10 @@
-import {createStore, applyMiddleware} from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import {ajaxMiddleware} from '../utils/ajaxMiddleware';
+import React from 'react'
+import {createStore, applyMiddleware} from 'redux'
 
-import rootReducer from './rootReducer';
+import rootReducer from './rootReducer'
 
-const store = createStore(rootReducer)
+import middleware from './middleware'
+
+const store = createStore(rootReducer, applyMiddleware(middleware));
 
 export default store;
