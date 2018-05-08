@@ -30,10 +30,10 @@ module.exports = {
 			test: /\.(js|jsx)$/, //一个匹配loaders所处理的文件的拓展名的正则表达式，这里用来匹配js和jsx文件（必须）
 			exclude: '/node_modules/', //屏蔽不需要处理的文件（文件夹）（可选）
 			use: ['babel-loader']
-		},{ 
+		},      { 
             test: /\.(woff|svg|eot|ttf)\??.*$/,
             exclude: /node_modules/,
-            loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+            loader: 'url-loader?limit=80000&name=fonts/[name].[md5.hash.hex:7].[ext]'
         },{
             test: /\.(jpe?g|png|gif|svg)$/i,
             use: [{
