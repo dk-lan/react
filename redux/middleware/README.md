@@ -26,6 +26,6 @@
 ### 结构
 |- app.js  
 |- src  
-|   - components  
-|   - datagrid  
-|       - datagridcomponent.js  
+|　　- components  
+|　　　　- datagrid  
+|　　　　　　- datagridcomponent.js
