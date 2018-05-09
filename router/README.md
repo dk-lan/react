@@ -154,7 +154,7 @@ class UserComponent extends React.Component{
 }
 ReactDOM.render(
     <Router history={hashHistory}>
-        <ReactRouter.Route path='/order(/:orderid)' component={OrderComponent}/>
+        <ReactRouter.Route path='/order(/:orderid)' component={UserComponent}/>
     </Router>,
     document.getElementById('app')
 )

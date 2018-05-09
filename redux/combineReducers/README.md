@@ -9,7 +9,7 @@
     - reducer.js
     - component.js
 - redux
-- tore.js
+    - store.js
 
 ### 组件 Component1
 #### action.js
@@ -151,6 +151,6 @@ export default store;
 - 多个组件之间，每个组件都有单独的`actions`和`reducer`
 - 多个组件之间的`reducer`通过`redux.combineReducers`来进行合并得到一个`rootReducer`，最后用`createStore`来完成`store`的创建生成。
 - 在 View 层通过`store.getState()`得到的是`rootReducer`后的对象`{cp1: 0, cp2: 0}`
-- `stor.dispath`会同时改变`rootReducer`里面的属性`cp1`和`cp2`，因为触发了`reducer`，而且两个`action。type`都是一样的，所以同时修改
+- `store.dispath`会同时改变`rootReducer`里面的属性`cp1`和`cp2`，因为触发了`reducer`，而且两个`action.type`都是一样的，所以同时修改
 - 如果想做到单独修改`rootReducer`，则需要变改不同组件`action.type`
 - 为了`action.type`能统一管理，可以派生出多一个层`constants`，后面的案例会用到这个层
