@@ -27,7 +27,7 @@ var StateComponent = React.createClass({
 //es6
 import React from 'react';
 import ReactDOM from 'react-dom';
-class Component1 extends React.createClass{
+class Component1 extends React.Component{
     state = {
         text: ''
     }
