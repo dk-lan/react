@@ -72,7 +72,7 @@ export default class Component1 extends Component{
     - 用户行为操作，由用户在 View 层触发 `store.dispatch(Actions.increment());`
     - 行为操作应该为一个 `function`且必须返回有`type`属性的对象
     - 每个方法都应该由`store`进行派发。
-- Reducer 层
+- Reducer 层  
     - 必须是一个纯函数(一个函数的返回结果只依赖于它的参数，并且在执行过程里面没有副作用)
     - 接受两个参数，第一个为`state`，另一个为`action`
     - `return`的结果可以用`store.getState()`来接收
