@@ -5,16 +5,8 @@ import DatagridComponent from '../datagrid/datagridcomponent'
 import './modal.css'
 
 class ModalComponent extends Component{
-    state = {
-        show: false
-    }
-    componentWillMount(){
-        this.state.show = this.props.show
-    }
     cancel(){
-        this.setState({
-            show: false
-        })
+        this.props.cb();
     }
     render(){
         let content = null;

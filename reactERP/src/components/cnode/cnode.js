@@ -28,10 +28,10 @@ export default class CNodeComponent extends React.Component{
         modalShow: false,
         title: ''
     }
-    filldata(_data){
+    filldata(_data = {}){
         this.setState({
             modalShow: false,
-            title: _data.title
+            title: _data.title || this.state.title
         })
     }
     componentDidMount(){
