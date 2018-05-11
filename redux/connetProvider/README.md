@@ -9,7 +9,7 @@
     - reducer.js
     - component.js
 - redux
-- tore.js
+    - tore.js
 - app.js
 
 ### 组件 Component1
@@ -77,16 +77,15 @@ export default connect(mapStateToProps, Actions)(Component1)
 ### 组件 component2
 #### action.js
 ```javascript
-export default {
-    increment(){
-        return {
-            type: "+"
-        }
-    },
-    decrement(){
-        return {
-            type: '-'
-        }
+export  function increment(){
+    return {
+        type: "+"
+    }
+}
+
+export function decrement(){
+    return {
+        type: '-'
     }
 }
 ```
