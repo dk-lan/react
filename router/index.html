@@ -14,6 +14,14 @@
 
         <script type="text/babel">
             var RootComponent = React.createClass({
+                componentDidMount: function(){
+                    this.timer = window.setInterval(function(){
+                        console.log(1)
+                    }, 1000)
+                },
+                componentWillUnmount: function(){
+                    window.clearInterval(this.timer)
+                },
                 render: function(){
                     return (
                         <div>
@@ -27,7 +35,7 @@
                 }
             })
 
-            var PageComponent = React.createClass({
+            var PageComponent = React.createClass({          
                 render: function(){
                     return (
                         <div>

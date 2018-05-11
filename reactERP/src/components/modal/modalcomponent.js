@@ -5,10 +5,21 @@ import DatagridComponent from '../datagrid/datagridcomponent'
 import './modal.css'
 
 class ModalComponent extends Component{
+    state = {
+        show: false
+    }
+    componentWillMount(){
+        this.state.show = this.props.show
+    }
+    cancel(){
+        this.setState({
+            show: false
+        })
+    }
     render(){
         let content = null;
         if(this.props.config.type == 'datagrid'){
-            content = <DatagridComponent config={this.props.config}/>
+            content = <DatagridComponent config={this.props.config} cb={this.props.cb}/>
         } else {
             content = <p>modal</p>
         }
@@ -18,14 +29,10 @@ class ModalComponent extends Component{
                 <div className="Marco-modalBody">
                     <div className="Marco-modalHeader">
                         <h5>Modal Header</h5>
-                        <span className="Marco-modalClose">&times;</span>
+                        <span className="Marco-modalClose"  onClick={this.cancel.bind(this)}>&times;</span>
                     </div>
                     <div className="Marco-modalMain">
                         {content}
-                    </div>
-                    <div className="Marco-modalBtn">
-                        <button className="btn btnSecondary">取消</button>
-                        <button className="btn btnPrimary">保存</button>
                     </div>
                 </div>
                 <div className="Marco-modalShade"></div>

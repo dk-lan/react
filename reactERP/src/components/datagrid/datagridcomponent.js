@@ -11,8 +11,8 @@ class DatagridComponent extends React.Component{
         return this.props.config.cols || cols;
     }
     selectTr(item){
-        if(this.props.config.cb){
-            this.props.config.cb(item)
+        if(this.props.cb){
+            this.props.cb(item)
         }
     }
     componentWillMount(){

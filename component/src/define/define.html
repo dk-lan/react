@@ -18,6 +18,16 @@
         <script type="text/babel">
             //定义
             var Component1 = React.createClass({
+                getInitialState: function(){
+                    return {
+                        text: 'hello'
+                    }
+                },
+                change: function(e){
+                    this.setState({
+                        text: e.event.target.value
+                    })
+                },
                 render: function(){
                     return (
                         <div>
