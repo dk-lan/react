@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d89e11b780e90812fd80"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d7f28c1128ff64e6f8c3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -33639,10 +33639,12 @@ var CNodeComponent = function (_React$Component) {
 
     _createClass(CNodeComponent, [{
         key: 'filldata',
-        value: function filldata(_data) {
+        value: function filldata() {
+            var _data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
             this.setState({
                 modalShow: false,
-                title: _data.title
+                title: _data.title || this.state.title
             });
         }
     }, {
@@ -34287,32 +34289,15 @@ var ModalComponent = function (_Component) {
     _inherits(ModalComponent, _Component);
 
     function ModalComponent() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
         _classCallCheck(this, ModalComponent);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ModalComponent.__proto__ || Object.getPrototypeOf(ModalComponent)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            show: false
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        return _possibleConstructorReturn(this, (ModalComponent.__proto__ || Object.getPrototypeOf(ModalComponent)).apply(this, arguments));
     }
 
     _createClass(ModalComponent, [{
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            this.state.show = this.props.show;
-        }
-    }, {
         key: 'cancel',
         value: function cancel() {
-            this.setState({
-                show: false
-            });
+            this.props.cb();
         }
     }, {
         key: 'render',
