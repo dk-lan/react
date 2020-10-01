@@ -1,3 +1,7 @@
+Update to English 
+
+
+
 # 认识 React
 React 是 facebook 开源的一套框架，可总结为以下几个特点：
 - 基于 JSX 语法糖实现
